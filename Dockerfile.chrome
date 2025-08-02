@@ -1,0 +1,12 @@
+FROM selenium/standalone-chrome
+
+WORKDIR /suite
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY Tests/TestChrome ./TestChrome
+
+RUN mkdir -p results/chrome
+
+CMD ["pytest", "TestChrome/", "--tb=short", "--maxfail=5", "--html=results/chrome/report.html"]
