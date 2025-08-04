@@ -9,4 +9,4 @@
 - `docker run -d --network selenium-net --name firefox-node selenium/node-firefox`
 
 4. Run tests
-- `docker run --rm --network selenium-net -v ${PWD}/results/chrome:/app/results/chrome test-chrome`
+- `docker run --rm --network selenium-net -v ${PWD}/results/chrome:/suite/results/chrome test-chrome`
